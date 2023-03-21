@@ -4,7 +4,7 @@
 
 This project was initialized with Vite, built on MaterialUI & Redux Toolkit Query for API fetching
 
-> View Website [Here](https://_tutora.netlify_.app)
+> View Website [Here](https://isaiah-ovie-rayda-frontend-test-solution.vercel.app/)
 
 ### Screenshots
 
