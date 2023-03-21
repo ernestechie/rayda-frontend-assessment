@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Box, Divider, Grid, Stack, Typography, Button } from '@mui/material';
 import ItemCard from './ItemCard';
 import { useGetItemsQuery } from '../../api/apiSlice';
+import Spinner from '../Spinner';
 
 const ItemsList = () => {
-  const { isLoading, data } = useGetItemsQuery();
+  const { isLoading, isError, data } = useGetItemsQuery();
 
   return (
     <Box
@@ -35,7 +36,12 @@ const ItemsList = () => {
         </Button>
       </Stack>
       <Divider my={3} />
-      {isLoading && <h1>Loading items...</h1>}
+      {isLoading && <Spinner />}
+      {!isLoading && isError && (
+        <Typography textAlign='center' p={4}>
+          No items found
+        </Typography>
+      )}
       {!isLoading && data && (
         <Grid
           container

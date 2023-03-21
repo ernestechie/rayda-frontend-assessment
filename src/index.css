@@ -18,3 +18,8 @@ button {
   height: 144px;
   margin-top: -52px;
 }
+
+.spinner {
+  margin: auto;
+  display: block;
+}
