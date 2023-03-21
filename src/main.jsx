@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
+import { itemsApi } from './api/apiSlice';
+import { ApiProvider } from '@reduxjs/toolkit/query/react';
 
 const theme = createTheme({
   palette: {
@@ -24,8 +26,10 @@ const theme = createTheme({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <ApiProvider api={itemsApi}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </ApiProvider>
   </React.StrictMode>
 );
